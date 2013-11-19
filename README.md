@@ -21,3 +21,6 @@ $SCALA_HOME/bin/scalac RefactScala2.scala</code></pre>
 
 
 The Clojure files are meant to be evaluated in a REPL.  You can open them in LightTable and make the buffer an InstaRepl.
+
+
+Copyright 2013 Glen K. Peterson http://www.apache.org/licenses/LICENSE-2.0

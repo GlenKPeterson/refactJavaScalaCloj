@@ -16,7 +16,7 @@
                           m (+ 12 (rem newMonth 12))]
                        (assoc ym :year y :month m))
                  :else (assoc ym :month newMonth))))
-                 
+
 ;; Test function
 (addMonths {:year 2013, :month 7} 2)
 ;; {:year 2013, :month 9}
@@ -28,3 +28,7 @@
 ;; Implementing Class
 (addMonths {:otherField1 "One", :year 2013, :month 7} 2)
 ;; {:otherField1 "One", :year 2013, :month 9}
+(addMonths {:otherField1 "One", :year 2012, :month 12} 1)
+;; {:otherField1 "One", :year 2013, :month 1}
+(addMonths {:otherField1 "One", :year 2013, :month 1} -1)
+;; {:otherField1 "One", :year 2012, :month 12}

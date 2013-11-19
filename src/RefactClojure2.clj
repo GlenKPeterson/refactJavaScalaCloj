@@ -13,7 +13,7 @@
 ;; New! start of this function, but rest is unchanged
 (defn addMonths [ym, addedMonths]
       (if (contains? ym :yyyyMm)
-                     (ymToNew (addMonths (ymToOld ym), addedMonths))
+          (ymToNew (addMonths (ymToOld ym), addedMonths))
           (let [newMonth (+ (:month ym) addedMonths)]
                ;; Unchanged
                (cond (> newMonth 12)
@@ -30,8 +30,8 @@
                               ;; To get the positive month, subtract it from 12
                               m (+ 12 (rem newMonth 12))]
                            (assoc ym :year y :month m))
-                     :else (assoc ym :month newMonth))))
-                 
+                     :else (assoc ym :month newMonth)))))
+
 ;; Test original data
 (addMonths {:year 2013, :month 7} 2)
 ;; {:year 2013, :month 9}

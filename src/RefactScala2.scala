@@ -58,17 +58,17 @@ object RefactScala2 {
   // Test Base
   YearMonth.addMonths(YearMonth(201307), 2)
   // YearMonth(2013,9)
-  YearMonth.addMonths(YearMonth(2012012), 1)
+  YearMonth.addMonths(YearMonth(201212), 1)
   // YearMonth(2013,1)
   YearMonth.addMonths(YearMonth(201301), -1)
   // YearMonth(2012,12)
   
   // Test MonthlyA
-  YearMonth.addMonths(MonthlyA("One", 201307), 2)
+  YearMonth.addMonths(MonthlyA("One", 2013, 7), 2)
   // YearMonth(2013,9)
-  YearMonth.addMonths(MonthlyA("One", 201212), 1)
+  YearMonth.addMonths(MonthlyA("One", 2012, 12), 1)
   // YearMonth(2013,1)
-  YearMonth.addMonths(MonthlyA("One", 201301), -1)
+  YearMonth.addMonths(MonthlyA("One", 2013, 1), -1)
   // YearMonth(2012,12)
 
   // Scala

@@ -4,7 +4,7 @@ object RefactScala2 {
     def year:Int
     def month:Int
     // New!
-    def getYyyyMm:Int = (year * 100) + month
+    def yyyyMm:Int = (year * 100) + month
   }
 
   // Unchanged

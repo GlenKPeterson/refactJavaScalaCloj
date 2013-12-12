@@ -12,7 +12,7 @@ public class RefactJava1 {
         
         private YearMonth(int y, int m) { year = y; month = m; }
 
-        public static YearMonth of(Integer y, int m) {
+        public static YearMonth of(int y, int m) {
           if (m > 12) {
               // convert to zero-based months for math
               m--;

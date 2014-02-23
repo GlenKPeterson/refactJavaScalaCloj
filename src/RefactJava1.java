@@ -14,20 +14,11 @@ public class RefactJava1 {
 
         public static YearMonth of(int y, int m) {
           if (m > 12) {
-              // convert to zero-based months for math
               m--;
-              // Carry any extra months over to the year
               y = y + (m / 12);
-              // Adjust month to be within one year
-              m = m % 12;
-              // convert back to one-based months
-              m++;
+              m = (m % 12) + 1;
           } else if (m < 1) {
-              // Carry any extra months over to the year, but the first year
-              // in this case is still year-1
               y = y + (m / 12) - 1;
-              // Adjust negative month to be within one year.
-              // To get the positive month, subtract it from 12
               m = 12 + (m % 12);
           }
           return new YearMonth(y, m);

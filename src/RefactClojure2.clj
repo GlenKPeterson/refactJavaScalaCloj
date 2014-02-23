@@ -17,17 +17,11 @@
           (let [newMonth (+ (:month ym) addedMonths)]
                ;; Unchanged
                (cond (> newMonth 12)
-                        ;; convert to zero-based months for math
                         (let [m (- newMonth 1)]
-                             ;; Carry any extra months over to the year
                              (assoc ym :year (+ (:year ym) (quot m 12)),
                                        :month (+ (rem m 12) 1)))
                      (< newMonth 1)
-                        ;; Carry any extra months over to the year, but the
-                        ;; first year in this case is still year-1
                         (let [y (dec (+ (:year ym) (quot newMonth 12))),
-                              ;; Adjust negative month to be within one year.
-                              ;; To get the positive month, subtract it from 12
                               m (+ 12 (rem newMonth 12))]
                            (assoc ym :year y :month m))
                      :else (assoc ym :month newMonth)))))

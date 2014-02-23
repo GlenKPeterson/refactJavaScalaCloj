@@ -16,16 +16,10 @@ object RefactScala2 {
     def addMonths(ym:YearMonthTrait, addedMonths:Int):YearMonth = {
       val newMonth = ym.month + addedMonths
       if (newMonth > 12) {
-        // convert to zero-based months for math
         val m = newMonth - 1
-        // Carry any extra months over to the year
         new YearMonth(ym.year + (m / 12), (m % 12) + 1)
       } else if (newMonth < 1) {
-        // Carry any extra months over to the year, but the
-        // first year in this case is still year-1
         val y = ym.year + (newMonth / 12) - 1
-        // Adjust negative month to be within one year.
-        // To get the positive month, subtract it from 12
         val m = 12 + (newMonth % 12)
         new YearMonth(y, m)
       } else {

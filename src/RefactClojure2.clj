@@ -13,7 +13,9 @@
 ;; New! start of this function, but rest is unchanged
 (defn addMonths [ym, addedMonths]
       (if (contains? ym :yyyyMm)
-          (ymToNew (addMonths (ymToOld ym), addedMonths))
+          (-> (ymToOld ym)
+              (addMonths addedMonths)
+              (ymToNew))
           (let [newMonth (+ (:month ym) addedMonths)]
                ;; Unchanged
                (cond (> newMonth 12)

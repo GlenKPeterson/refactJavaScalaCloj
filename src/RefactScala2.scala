@@ -42,7 +42,7 @@ object RefactScala2 {
   trait YearMonthNew extends YearMonthTrait {
     def yyyyMm:Int
     def year:Int = yyyyMm / 100
-    def month:Int = (yyyyMm % 100)
+    def month:Int = yyyyMm % 100
   }
 
   // New!

@@ -15,7 +15,7 @@
       (if (contains? ym :yyyyMm)
           (-> (ymToOld ym)
               (addMonths addedMonths)
-              (ymToNew))
+              ymToNew)
           (let [newMonth (+ (:month ym) addedMonths)]
                ;; Unchanged
                (cond (> newMonth 12)
